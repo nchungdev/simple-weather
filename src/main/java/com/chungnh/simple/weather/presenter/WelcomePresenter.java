@@ -27,6 +27,6 @@ public class WelcomePresenter extends Presenter<WelcomeView> {
     }
 
     public void splashComplete() {
-        view.openHome();
+        view.openMain();
     }
 }

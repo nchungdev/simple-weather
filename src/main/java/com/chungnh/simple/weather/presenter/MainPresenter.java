@@ -16,6 +16,7 @@ import com.chungnh.simple.weather.utility.task.SimpleSubscriber;
 import com.chungnh.simple.weather.view.itf.MainView;
 
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 /**
  * @author chungnh
@@ -25,7 +26,6 @@ public class MainPresenter extends Presenter<MainView> {
     private final LocationRepository locationRepository;
     private final LocationDbRepository locationDbRepository;
     private final ForecastRepository weatherRepository;
-    private final ForecastDbRepository forecastDbRepository;
     private Disposable disposable;
     private final Debouncer<String> debouncer = new Debouncer<>(new Debouncer.Callback<>() {
         @Override
@@ -49,7 +49,14 @@ public class MainPresenter extends Presenter<MainView> {
         this.locationRepository = locationRepository;
         this.locationDbRepository = locationDbRepository;
         this.weatherRepository = forecastRepository;
-        this.forecastDbRepository = forecastDbRepository;
+    }
+
+    @Override
+    public void start() {
+        if (System.currentTimeMillis() - lastTimeUpdate > TimeUnit.MINUTES.toMillis(15)) {
+            isReceived = false;
+        }
+        super.start();
     }
 
     @Override

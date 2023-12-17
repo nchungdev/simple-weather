@@ -8,7 +8,7 @@ package com.chungnh.simple.weather.view.panel;
 import com.chungnh.simple.weather.di.Injector;
 import com.chungnh.simple.weather.presenter.WelcomePresenter;
 import com.chungnh.simple.weather.view.base.BasePanel;
-import com.chungnh.simple.weather.view.form.MainForm;
+import com.chungnh.simple.weather.view.form.MainFrame;
 import com.chungnh.simple.weather.view.itf.WelcomeView;
 
 import javax.swing.*;
@@ -90,12 +90,12 @@ public class WelcomePane extends BasePanel<WelcomePresenter> implements WelcomeV
     // End of variables declaration//GEN-END:variables
 
     @Override
-    public void openHome() {
+    public void openMain() {
         Component root = SwingUtilities.getRoot(this);
-        if (root instanceof MainForm) {
-            ((MainForm) root).setContentPane(new MainPane());
-            ((MainForm) root).pack();
-            ((MainForm) root).setLocationRelativeTo(null);
+        if (root instanceof MainFrame) {
+            ((MainFrame) root).setContentPane(new MainPane());
+            ((MainFrame) root).pack();
+            ((MainFrame) root).setLocationRelativeTo(null);
         }
     }
 

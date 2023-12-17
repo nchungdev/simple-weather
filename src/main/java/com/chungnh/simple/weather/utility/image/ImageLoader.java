@@ -47,7 +47,6 @@ public class ImageLoader {
                     }
                     if (resource != null) {
                         bufferedImage = ImageIO.read(resource);
-                        System.out.println("Size=" + bufferedImage.getWidth());
                     }
                     shouldCache = false;
                 }

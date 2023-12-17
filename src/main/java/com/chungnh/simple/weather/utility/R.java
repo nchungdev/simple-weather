@@ -3,6 +3,7 @@ package com.chungnh.simple.weather.utility;
 public class R {
     public static class Drawable {
         public static final String ic_wind_speed = "drawable/ic_wind_speed.png";
+        public static final String logo = "drawable/logo.png";
         public static final String ic_uv = "drawable/ic_uv.png";
         public static final String ic_rain = "drawable/ic_rain.png";
         public static final String ic_humidity = "drawable/ic_humidity.png";
