@@ -1,0 +1,4 @@
+- MVP
+- Lazy image loader
+- Clean Architechture (Simple)
+- DI
